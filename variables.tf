@@ -57,9 +57,9 @@ variable "dynamodb_table_arn" {
 }
 
 variable "dynamodb_indexes" {
-  type        = list(string)
+  type        = any # Map of objects with optional parameters, not supported by Terraform.
   description = "List of DynamoDB indexes"
-  default     = []
+  default     = {}
 }
 
 variable "autoscale_write_target" {
